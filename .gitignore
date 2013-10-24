@@ -1,0 +1,7 @@
+.venv
+build
+.idea
+readme.html
+PyBabel_json.egg-info/
+dist
+*.pyc
