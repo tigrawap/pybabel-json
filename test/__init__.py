@@ -11,11 +11,11 @@ class TestExtraction(unittest.TestCase):
 
     def setUp(self):
         stderr = None if 'PYBABEL_JSON_DEBUG' in os.environ else PIPE
-        dirname = os.path.dirname(__file__)
-        cfg = 'babel.cfg'
-        pot_file = 'messages.pot'
-
-        self.found_transes = Popen(['pybabel','extract','-F',cfg,'-o',pot_file,'.'],stdout=PIPE,stderr=stderr).stdout.read()
+        dirname = os.path.dirname(os.path.abspath(__file__))
+        os.chdir(dirname)
+        cfg = os.path.join(dirname,'babel.cfg')
+        pot_file = os.path.join(dirname,'messages.pot')
+        self.found_transes = Popen(['pybabel','-v','extract','-F',cfg,'-o',pot_file,'.'],stdout=PIPE,stderr=stderr).stdout.read()
         with open(pot_file, 'r') as output:
             self.output = output.read()
 

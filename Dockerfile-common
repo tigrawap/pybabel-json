@@ -1,0 +1,3 @@
+FROM ubuntu:14.04
+RUN apt-get update && apt-get -y install python python3 python-setuptools python3-setuptools
+ENV PYBABEL_JSON_DEBUG 1

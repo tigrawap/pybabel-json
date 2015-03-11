@@ -1,0 +1,21 @@
+#!/bin/sh
+
+P2=FAIL
+P3=FAIL
+
+echo Building docker images
+docker build -t pybabel-json/base -f Dockerfile-common .
+docker build -t pybabel-json/python2 -f Dockerfile2 .
+docker build -t pybabel-json/python3 -f Dockerfile3 .
+
+docker run --rm pybabel-json/python2
+if [ $? = 0 ]; then
+	P2=SUCCESS
+fi
+
+docker run --rm pybabel-json/python3
+if [ $? = 0 ]; then
+	P3=SUCCESS
+fi
+
+echo "\nPython2:$P2 Python3:$P3\n"

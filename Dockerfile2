@@ -1,0 +1,6 @@
+FROM pybabel-json/base
+RUN easy_install babel
+ADD . /app
+WORKDIR /app
+RUN python2 setup.py develop
+CMD python2 -m unittest -v test
