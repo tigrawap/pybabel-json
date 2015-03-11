@@ -3,7 +3,8 @@ PyBabel-JSON
 
 Release notes
 --------------
-- 0.1.0 - Initial release
+- 0.2.0 - Added Python 3 support.
+- 0.1.0 - Initial release.
 
 Installation
 --------------
