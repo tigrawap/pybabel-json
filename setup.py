@@ -8,13 +8,25 @@ def read(fname):
 
 setup(
     name='PyBabel-json',
-    version='0.1.0',
+    version='0.2.0',
     description='PyBabel json gettext strings extractor',
     author='Anton Bykov aka Tigra San',
     author_email='tigrawap@gmail.com',
     long_description=read('README.rst'),
     packages=['pybabel_json'],
     url="https://github.com/tigrawap/pybabel-json",
+    classifiers=[
+        'Development Status :: 5 - Production/Stable',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: BSD License',
+        'Operating System :: OS Independent',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 2.6',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.4',
+        'Topic :: Software Development :: Libraries :: Python Modules',
+    ],
     install_requires=[
         'babel',
     ],
