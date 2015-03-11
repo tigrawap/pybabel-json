@@ -54,7 +54,7 @@ class JsonExtractor(object):
             line_number=token.lineno,
             content=value
         )
-        for key,value in self.token_params.iteritems():
+        for key,value in self.token_params.items():
             if key == 'alt_token':
                 result['alt_content']=unquote_string(value.value)
                 result['alt_line_number']=value.lineno

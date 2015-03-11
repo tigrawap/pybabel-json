@@ -11,8 +11,12 @@ class TestExtraction(unittest.TestCase):
 
     def setUp(self):
         stderr = None if 'PYBABEL_JSON_DEBUG' in os.environ else PIPE
-        self.found_transes = Popen(['pybabel','extract','-F','babel.cfg','-o','messages.pot','.'],stdout=PIPE,stderr=stderr).stdout.read()
-        with open(os.path.join(os.path.dirname(__file__),'messages.pot'),'r') as output:
+        dirname = os.path.dirname(__file__)
+        cfg = 'babel.cfg'
+        pot_file = 'messages.pot'
+
+        self.found_transes = Popen(['pybabel','extract','-F',cfg,'-o',pot_file,'.'],stdout=PIPE,stderr=stderr).stdout.read()
+        with open(pot_file, 'r') as output:
             self.output = output.read()
 
     def test_number_of_occurences(self):
